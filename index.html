@@ -3,6 +3,20 @@
 
 <head>
   <script src="https://assets.adobedtm.com/236ca7d75265/dda9ca11ed76/launch-c952c4ed7a2a-development.min.js" async></script>
+  <script>
+        adobe.target.getOffer({
+            "mbox": "target-global-mbox",
+            "success": function(offer) {
+            adobe.target.applyOffer({
+                "mbox": "target-global-mbox",
+                "offer": offer
+            });
+            },
+            "error": function(status, error) {
+            console.log('Error:', status, error);
+            }
+        });
+    </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
